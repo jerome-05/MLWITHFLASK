@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKD Prediction</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">CREDIT CARD BALANCE PREDICTION</h2>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="CUST_ID">Customer Id:</label>
+                <input type="number" class="form-control" name="CUST_ID" id="CUST_ID" required>
+            </div>
+	    <div class="form-group">
+                <label for="BALANCE_FREQUENCY">Balance Frequency:</label>
+                <input type="number" class="form-control" name="BALANCE_FREQUENCY" id="BALANCE_FREQUENCY" step="0.001" required>
+            </div>
+	    <div class="form-group">
+                <label for="PURCHASES">Purchases:</label>
+                <input type="number" class="form-control" name="PURCHASES" id="PURCHASES" step="0.001" required>
+            </div>
+	    <div class="form-group">
+                <label for="ONEOFF_PURCHASES">One Off Purchases:</label>
+                <input type="number" class="form-control" name="ONEOFF_PURCHASES" id="ONEOFF_PURCHASES" step="0.001" required>
+            </div>
+	    <div class="form-group">
+                <label for="INSTALLMENTS_PURCHASES">Installment Purchases :</label>
+                <input type="number" class="form-control" name="INSTALLMENTS_PURCHASES" id="INSTALLMENTS_PURCHASES" step="0.001" required>
+            </div>
+            <div class="form-group">
+                <label for="CASH_ADVANCE">Cash Advance:</label>
+                <input type="number" class="form-control" name="CASH_ADVANCE" id="CASH_ADVANCE" step="0.001" required>
+            </div>
+            <div class="form-group">
+                <label for="PURCHASES_FREQUENCY">Purchase Frequency:</label>
+                <input type="number" class="form-control" name="PURCHASES_FREQUENCY" id="PURCHASES_FREQUENCY" step="0.001" required>
+            </div>
+            <div class="form-group">
+                <label for="ONEOFF_PURCHASES_FREQUENCY">One Off Purchases Frequency:</label>
+                <input type="number" class="form-control" name="ONEOFF_PURCHASES_FREQUENCY" id="ONEOFF_PURCHASES_FREQUENCY" step="0.001" required>
+            </div>
+	    <div class="form-group">
+                <label for="PURCHASES_INSTALLMENTS_FREQUENCY">Installments Frequency:</label>
+                <input type="number" class="form-control" name="PURCHASES_INSTALLMENTS_FREQUENCY" id="PURCHASES_INSTALLMENTS_FREQUENCY" step="0.001" required>
+            </div>
+            <div class="form-group">
+                <label for="CASH_ADVANCE_FREQUENCY">Cash Advance Frequency:</label>
+                <input type="number" class="form-control" name="CASH_ADVANCE_FREQUENCY" id="CASH_ADVANCE_FREQUENCY" step="0.001" required>
+            </div>
+            <div class="form-group">
+                <label for="CASH_ADVANCE_TRX">Cash Advance Trx:</label>
+                <input type="number" class="form-control" name="CASH_ADVANCE_TRX" id="CASH_ADVANCE_TRX" required>
+            </div>
+            <div class="form-group">
+                <label for="PURCHASES_TRX">Purchases Trx:</label>
+                <input type="number" class="form-control" name="PURCHASES_TRX" id="PURCHASES_TRX" required>
+            </div>
+            <div class="form-group">
+                <label for="PAYMENTS">Payments:</label>
+                <input type="number" class="form-control" name="PAYMENTS" id="PAYMENTS" step="0.001" required>
+            </div>
+ 	    <div class="form-group">
+                <label for="PRC_FULL_PAYMENT">Prc Full Payment:</label>
+                <input type="number" class="form-control" name="PRC_FULL_PAYMENT" id="PRC_FULL_PAYMENT" step="0.001" required>
+            </div>
+ 	    <div class="form-group">
+                <label for="TENURE">Tenure:</label>
+                <input type="number" class="form-control" name="TENURE" id="TENURE" required>
+            </div>
+                        <button type="submit">Calculate</button>
+        </form>
+        {% if prediction_text %}
+            <div class="mt-3">
+                <h4 class="text-success">{{ prediction_text }}</h4>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
