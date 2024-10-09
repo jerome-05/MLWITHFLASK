@@ -11,9 +11,10 @@
     <style>
         body {
             background-color: #f8f9fa;
-            background-image: url('https://images.unsplash.com/photo-1556155092-8707de31f9c4'); /* Replace with your image URL */
+            background-image: url('https://images.unsplash.com/photo-1556155092-8707de31f9c4');
             background-size: cover;
             background-position: center;
+            background-attachment: fixed;
             font-family: 'Poppins', sans-serif;
             color: #333;
         }
@@ -192,27 +193,34 @@
                 <input type="number" class="form-control" name="PAYMENTS" id="PAYMENTS" step="0.001" placeholder="0.0" required>
             </div>
             <div class="form-group">
-                <label for="MINIMUM_PAYMENTS"><i class="fas fa-coins"></i>Minimum Payments:</label>
+                <label for="MINIMUM_PAYMENTS"><i class="fas fa-hand-holding-usd"></i>Minimum Payments:</label>
                 <input type="number" class="form-control" name="MINIMUM_PAYMENTS" id="MINIMUM_PAYMENTS" step="0.001" placeholder="0.0" required>
             </div>
             <div class="form-group">
-                <label for="CREDIT_LIMIT"><i class="fas fa-credit-card"></i>Credit Limit:</label>
-                <input type="number" class="form-control" name="CREDIT_LIMIT" id="CREDIT_LIMIT" step="0.001" placeholder="0.0" required>
-            </div>
-            <div class="form-group">
-                <label for="PRC_FULL_PAYMENT"><i class="fas fa-percentage"></i>Percent of Full Payment:</label>
+                <label for="PRC_FULL_PAYMENT"><i class="fas fa-percent"></i>Percent Full Payment:</label>
                 <input type="number" class="form-control" name="PRC_FULL_PAYMENT" id="PRC_FULL_PAYMENT" step="0.001" placeholder="0.0" required>
             </div>
             <div class="form-group">
-                <label for="TENURE"><i class="fas fa-hourglass-half"></i>Tenure:</label>
+                <label for="TENURE"><i class="fas fa-calendar-alt"></i>Tenure:</label>
                 <input type="number" class="form-control" name="TENURE" id="TENURE" placeholder="0" required>
             </div>
             <button type="submit">Predict Balance</button>
         </form>
+
+        {% if prediction_text %}
+        <div class="card">
+            <h4>{{ prediction_text }}</h4>
+        </div>
+        {% endif %}
     </div>
+
     <footer>
-        <p>&copy; 2024 Credit Card Balance Prediction. All rights reserved. | <a href="#">Privacy Policy</a></p>
+        <p>&copy; 2024 Credit Card Balance Prediction. All Rights Reserved. | <a href="#">Privacy Policy</a></p>
     </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>
